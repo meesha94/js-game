@@ -23,3 +23,4 @@
   
   Create a home button to take user to start again and restart game
 */
+"use strict";
