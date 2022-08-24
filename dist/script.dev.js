@@ -25,64 +25,76 @@
   
   Create a home button to take user to start again and restart game
 */
-var questions = [{
-  question: question1,
+var questionsArray = [{
+  question: "question1",
   answers: [{
-    answer: answer1a,
+    answera: "answer1a",
     correct: true
   }, {
-    answer: answer1b,
+    answerb: "answer1b",
     correct: false
   }, {
-    answer: answer1c,
+    answerc: "answer1c",
     correct: false
   }, {
-    answer: answer1d,
+    answerd: "answer1d",
     correct: false
   }]
 }, {
-  question: question2,
+  question: "question2",
   answers: [{
-    answer: answer2a,
+    answera: "answer2a",
     correct: true
   }, {
-    answer: answer2b,
+    answerb: "answer2b",
     correct: false
   }, {
-    answer: answer2c,
+    answerc: "answer2c",
     correct: false
   }, {
-    answer: answer2d,
+    answerd: "answer2d",
     correct: false
   }]
 }, {
-  question: question3,
+  question: "question3",
   answers: [{
-    answer: answer3,
+    answera: "answer3",
     correct: true
   }, {
-    answer: answer3,
+    answerb: "answer3",
     correct: false
   }, {
-    answer: answer3,
+    answerc: "answer3",
     correct: false
   }, {
-    answer: answer3,
+    answerd: "answer3",
     correct: false
   }]
 }, {
-  question: question4,
+  question: "question4",
   answers: [{
-    answer: answer4,
+    answera: "answer4",
     correct: true
   }, {
-    answer: answer4,
+    answerb: "answer4",
     correct: false
   }, {
-    answer: answer4,
+    answerc: "answer4",
     correct: false
   }, {
-    answer: answer4,
+    answerd: "answer4",
     correct: false
   }]
-}];
+}]; //diaply all questionss
+
+var questions = function questions(question, answers) {
+  console.log("".concat(question.answers[0].answera));
+  return "\n    <div class= \"card\">\n    <h1 class= \"question\">".concat(question.question, "</h1>\n    <div class=\"answers\">\n    <button class=\"a\">").concat(question.answers[0].answera, "</button>\n    <button class=\"b\">").concat(answers.answers[1].answerb, "</button>\n    <button class=\"c\">").concat(answers.answer[2].answerc, "</button>\n    <button class=\"d\">").concat(answers.answers[3].answerd, "</button>\n    </div>\n    </div>");
+};
+
+var container = document.querySelector(".card-container");
+questionsArray.forEach(function (question, answers) {
+  container.innerHTML += questions(question, answers);
+}); // check if answer clicked on is correct
+
+var checkAnswer = function checkAnswer() {};

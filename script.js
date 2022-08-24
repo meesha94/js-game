@@ -25,53 +25,82 @@
 */
 
 
-
-
-
-
-
-
-const questions = 
+const questionsArray = 
 [
-    {question:question1, 
+    {question:"question1", 
         answers: 
         [
-            {answer:answer1a, correct:true},
-            {answer:answer1b, correct:false},
-            {answer:answer1c, correct:false}, 
-            {answer:answer1d, correct:false}
+            {answera:"answer1a", correct:true},
+            {answerb:"answer1b", correct:false},
+            {answerc:"answer1c", correct:false}, 
+            {answerd:"answer1d", correct:false}
         ]
     }
 ,
 
-    {question:question2, 
+    {question:"question2", 
      answers: 
         [
-            {answer:answer2a, correct:true},
-            {answer:answer2b, correct:false},
-            {answer:answer2c, correct:false}, 
-            {answer:answer2d, correct:false}
+            {answera:"answer2a", correct:true},
+            {answerb:"answer2b", correct:false},
+            {answerc:"answer2c", correct:false}, 
+            {answerd:"answer2d", correct:false}
         ]
     }
 ,
 
-    {question:question3, 
+    {question:"question3", 
     answers: 
         [
-            {answer:answer3, correct:true},
-            {answer:answer3, correct:false},
-            {answer:answer3, correct:false}, 
-            {answer:answer3, correct:false}
+            {answera:"answer3", correct:true},
+            {answerb:"answer3", correct:false},
+            {answerc:"answer3", correct:false}, 
+            {answerd:"answer3", correct:false}
         ]
     }
 ,
-    {question:question4, 
+    {question:"question4", 
     answers: 
         [
-            {answer:answer4, correct:true},
-            {answer:answer4, correct:false},
-            {answer:answer4, correct:false}, 
-            {answer:answer4, correct:false}
+            {answera:"answer4", correct:true},
+            {answerb:"answer4", correct:false},
+            {answerc:"answer4", correct:false}, 
+            {answerd:"answer4", correct:false}
         ]
     }
 ];
+
+//diaply all questionss
+
+const questions = (question, answers) => {
+    console.log(`${question.answers[0].answera}`)
+    return`
+    <div class= "card">
+    <h1 class= "question">${question.question}</h1>
+    <div class="answers">
+    <button class="a">${question.answers[0].answera}</button>
+    <button class="b">${answers.answers[1].answerb}</button>
+    <button class="c">${answers.answer[2].answerc}</button>
+    <button class="d">${answers.answers[3].answerd}</button>
+    </div>
+    </div>`
+    
+};
+
+const container = document.querySelector(".card-container");
+
+questionsArray.forEach((question, answers) => {
+    container.innerHTML += questions(question, answers);
+});
+
+// check if answer clicked on is correct
+
+const checkAnswer = () => {
+    
+}
+
+
+
+
+
+
