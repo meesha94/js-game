@@ -23,3 +23,55 @@
   
   Create a home button to take user to start again and restart game
 */
+
+
+
+
+
+
+
+
+const questions = 
+[
+    {question:question1, 
+        answers: 
+        [
+            {answer:answer1a, correct:true},
+            {answer:answer1b, correct:false},
+            {answer:answer1c, correct:false}, 
+            {answer:answer1d, correct:false}
+        ]
+    }
+,
+
+    {question:question2, 
+     answers: 
+        [
+            {answer:answer2a, correct:true},
+            {answer:answer2b, correct:false},
+            {answer:answer2c, correct:false}, 
+            {answer:answer2d, correct:false}
+        ]
+    }
+,
+
+    {question:question3, 
+    answers: 
+        [
+            {answer:answer3, correct:true},
+            {answer:answer3, correct:false},
+            {answer:answer3, correct:false}, 
+            {answer:answer3, correct:false}
+        ]
+    }
+,
+    {question:question4, 
+    answers: 
+        [
+            {answer:answer4, correct:true},
+            {answer:answer4, correct:false},
+            {answer:answer4, correct:false}, 
+            {answer:answer4, correct:false}
+        ]
+    }
+];
