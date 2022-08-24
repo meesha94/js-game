@@ -24,6 +24,7 @@
   Create a home button to take user to start again and restart game
 */
 
+//has all the questions and answers in an array
 
 const questionsArray = 
 [
@@ -70,34 +71,42 @@ const questionsArray =
     }
 ];
 
-//diaply all questionss
+//displays all question cards in one go
 
-const questions = (question, answers) => {
+const questions = (question) => {
     console.log(`${question.answers[0].answera}`)
     return`
     <div class= "card">
     <h1 class= "question">${question.question}</h1>
     <div class="answers">
     <button class="a">${question.answers[0].answera}</button>
-    <button class="b">${answers.answers[1].answerb}</button>
-    <button class="c">${answers.answer[2].answerc}</button>
-    <button class="d">${answers.answers[3].answerd}</button>
+    <button class="b">${question.answers[1].answerb}</button>
+    <button class="c">${question.answers[2].answerc}</button>
+    <button class="d">${question.answers[3].answerd}</button>
     </div>
     </div>`
+
+    
     
 };
 
 const container = document.querySelector(".card-container");
 
-questionsArray.forEach((question, answers) => {
-    container.innerHTML += questions(question, answers);
+questionsArray.forEach((question) => {
+    container.innerHTML += questions(question);
 });
 
-// check if answer clicked on is correct
+//declares first button as a global variable
+const button = document.getElementsByTagName("button")[0]
 
-const checkAnswer = () => {
-    
-}
+// if button 1 is clicked console.log("working")
+button.addEventListener("click", () => console.log("clicked answer a"))
+
+//console.log if button cliked is correct answer
+
+//console.log if button clicked is wrong answer
+
+
 
 
 

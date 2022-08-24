@@ -25,6 +25,7 @@
   
   Create a home button to take user to start again and restart game
 */
+//has all the questions and answers in an array
 var questionsArray = [{
   question: "question1",
   answers: [{
@@ -85,16 +86,21 @@ var questionsArray = [{
     answerd: "answer4",
     correct: false
   }]
-}]; //diaply all questionss
+}]; //displays all question cards in one go
 
-var questions = function questions(question, answers) {
+var questions = function questions(question) {
   console.log("".concat(question.answers[0].answera));
-  return "\n    <div class= \"card\">\n    <h1 class= \"question\">".concat(question.question, "</h1>\n    <div class=\"answers\">\n    <button class=\"a\">").concat(question.answers[0].answera, "</button>\n    <button class=\"b\">").concat(answers.answers[1].answerb, "</button>\n    <button class=\"c\">").concat(answers.answer[2].answerc, "</button>\n    <button class=\"d\">").concat(answers.answers[3].answerd, "</button>\n    </div>\n    </div>");
+  return "\n    <div class= \"card\">\n    <h1 class= \"question\">".concat(question.question, "</h1>\n    <div class=\"answers\">\n    <button class=\"a\">").concat(question.answers[0].answera, "</button>\n    <button class=\"b\">").concat(question.answers[1].answerb, "</button>\n    <button class=\"c\">").concat(question.answers[2].answerc, "</button>\n    <button class=\"d\">").concat(question.answers[3].answerd, "</button>\n    </div>\n    </div>");
 };
 
 var container = document.querySelector(".card-container");
-questionsArray.forEach(function (question, answers) {
-  container.innerHTML += questions(question, answers);
-}); // check if answer clicked on is correct
+questionsArray.forEach(function (question) {
+  container.innerHTML += questions(question);
+}); //declares first button as a global variable
 
-var checkAnswer = function checkAnswer() {};
+var button = document.getElementsByTagName("button")[0]; // if button 1 is clicked console.log("working")
+
+button.addEventListener("click", function () {
+  return console.log("clicked answer a");
+}); //console.log if button cliked is correct answer
+//console.log if button clicked is wrong answer
