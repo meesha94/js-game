@@ -26,89 +26,106 @@
   Create a home button to take user to start again and restart game
 */
 //has all the questions and answers in an array
+var next = document.getElementsByClassName(".next");
 var questionsArray = [{
   question: "question1",
   answers: [{
-    answera: "answer1a",
+    a: "answer1a",
     correct: true
   }, {
-    answerb: "answer1b",
+    b: "answer1b",
     correct: false
   }, {
-    answerc: "answer1c",
+    c: "answer1c",
     correct: false
   }, {
-    answerd: "answer1d",
+    d: "answer1d",
     correct: false
   }]
 }, {
   question: "question2",
   answers: [{
-    answera: "answer2a",
+    a: "answer2a",
     correct: false
   }, {
-    answerb: "answer2b",
+    b: "answer2b",
     correct: true
   }, {
-    answerc: "answer2c",
+    c: "answer2c",
     correct: false
   }, {
-    answerd: "answer2d",
+    d: "answer2d",
     correct: false
   }]
 }, {
   question: "question3",
   answers: [{
-    answera: "answer3",
+    a: "answer3",
     correct: false
   }, {
-    answerb: "answer3",
+    b: "answer3",
     correct: false
   }, {
-    answerc: "answer3",
+    c: "answer3",
     correct: true
   }, {
-    answerd: "answer3",
+    d: "answer3",
     correct: false
   }]
 }, {
   question: "question4",
   answers: [{
-    answera: "answer4",
+    a: "answer4",
     correct: true
   }, {
-    answerb: "answer4",
+    b: "answer4",
     correct: false
   }, {
-    answerc: "answer4",
+    c: "answer4",
     correct: false
   }, {
-    answerd: "answer4",
+    d: "answer4",
     correct: false
   }]
 }]; //displays all question cards in one go
 
 var questions = function questions(question) {
-  console.log("".concat(question.answers[0].answera));
-  return "\n    <div class= \"card\">\n    <h1 class= \"question\">".concat(question.question, "</h1>\n    <div class=\"answers\">\n    <button class=\"a\">").concat(question.answers[0].answera, "</button>\n    <button class=\"b\">").concat(question.answers[1].answerb, "</button>\n    <button class=\"c\">").concat(question.answers[2].answerc, "</button>\n    <button class=\"d\">").concat(question.answers[3].answerd, "</button>\n    </div>\n    </div>");
+  //console.log(`${question.answers[0].a}`);
+  return "\n    <div class= \"card\">\n    <h1 class= \"question\">".concat(question.question, "</h1>\n    <div class=\"answers\">\n    <button class=\"a\">").concat(question.answers[0].a, "</button>\n    <button class=\"b\">").concat(question.answers[1].b, "</button>\n    <button class=\"c\">").concat(question.answers[2].c, "</button>\n    <button class=\"d\">").concat(question.answers[3].d, "</button>\n    </div>\n    </div>");
 };
 
-var container = document.querySelector(".card-container");
-questionsArray.forEach(function (question) {
-  container.innerHTML += questions(question);
-}); //click on answer a for every question, check if it is true or false 
-//console.log if button a cliked is correct answer
-//console.log if button a clicked is wrong answer
+var container = document.querySelector(".card-container"); //displays questions one at at time, 
 
-document.querySelectorAll(".a").forEach(function (answer) {
-  answer.addEventListener("click", function () {
-    console.log("clicked option a");
-    questionsArray.forEach(function (answers) {
-      if (answers.correct == true) {
-        console.log("answer a clicked is true");
-      } else if (answers.correct == false) {
-        console.log("incorrect answer");
-      }
+var count = 0;
+var counter = 0;
+
+var displayQuestions = function displayQuestions() {
+  container.innerHTML += questions(questionsArray[count]);
+  count++;
+  document.querySelectorAll(".answers").forEach(function (answer) {
+    answer.addEventListener("click", function () {
+      //console.log(`${answer}`)
+      questionsArray.forEach(function (answers) {
+        //console.log(answers.answers)
+        answers.answers.forEach(function (options) {
+          if (options.correct == true) {
+            console.log("answer is true");
+            return counter++;
+          } else if (options.correct == false) {
+            console.log("incorrect answer");
+          }
+        });
+      });
     });
   });
+};
+
+displayQuestions(); //displays all questions in one go 
+
+/*questionsArray.forEach((question) => {
+  container.innerHTML += questions(question);
 });
+*/
+//click on answer a for every question, check if it is true or false 
+//console.log if button a cliked is correct answer
+//console.log if button a clicked is wrong answer

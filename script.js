@@ -25,42 +25,44 @@
 */
 
 //has all the questions and answers in an array
+const next = document.getElementsByClassName(".next")
+
 
 const questionsArray = [
   {
     question: "question1",
     answers: [
-      { answera: "answer1a", correct: true },
-      { answerb: "answer1b", correct: false },
-      { answerc: "answer1c", correct: false },
-      { answerd: "answer1d", correct: false },
+      { a: "answer1a", correct: true },
+      { b: "answer1b", correct: false },
+      { c: "answer1c", correct: false },
+      { d: "answer1d", correct: false },
     ],
   },
   {
     question: "question2",
     answers: [
-      { answera: "answer2a", correct: false },
-      { answerb: "answer2b", correct: true },
-      { answerc: "answer2c", correct: false },
-      { answerd: "answer2d", correct: false },
+      { a: "answer2a", correct: false },
+      { b: "answer2b", correct: true },
+      { c: "answer2c", correct: false },
+      { d: "answer2d", correct: false },
     ],
   },
   {
     question: "question3",
     answers: [
-      { answera: "answer3", correct: false },
-      { answerb: "answer3", correct: false },
-      { answerc: "answer3", correct: true },
-      { answerd: "answer3", correct: false },
+      { a: "answer3", correct: false },
+      { b: "answer3", correct: false },
+      { c: "answer3", correct: true },
+      { d: "answer3", correct: false },
     ],
   },
   {
     question: "question4",
     answers: [
-      { answera: "answer4", correct: true },
-      { answerb: "answer4", correct: false },
-      { answerc: "answer4", correct: false },
-      { answerd: "answer4", correct: false },
+      { a: "answer4", correct: true },
+      { b: "answer4", correct: false },
+      { c: "answer4", correct: false },
+      { d: "answer4", correct: false },
     ],
   },
 ];
@@ -68,41 +70,62 @@ const questionsArray = [
 //displays all question cards in one go
 
 const questions = (question) => {
-  console.log(`${question.answers[0].answera}`);
+  //console.log(`${question.answers[0].a}`);
   return `
     <div class= "card">
     <h1 class= "question">${question.question}</h1>
     <div class="answers">
-    <button class="a">${question.answers[0].answera}</button>
-    <button class="b">${question.answers[1].answerb}</button>
-    <button class="c">${question.answers[2].answerc}</button>
-    <button class="d">${question.answers[3].answerd}</button>
+    <button class="a">${question.answers[0].a}</button>
+    <button class="b">${question.answers[1].b}</button>
+    <button class="c">${question.answers[2].c}</button>
+    <button class="d">${question.answers[3].d}</button>
     </div>
     </div>`;
 };
 
 const container = document.querySelector(".card-container");
+//displays questions one at at time, 
+let count = 0;
+let counter = 0;
+const displayQuestions = () => {
+    
+container.innerHTML += questions(questionsArray[count])
+count ++;
 
-questionsArray.forEach((question) => {
+document.querySelectorAll(".answers").forEach((answer) => {
+    answer.addEventListener("click", () => 
+     { //console.log(`${answer}`)
+      questionsArray.forEach((answers) => {
+         
+          //console.log(answers.answers)
+          answers.answers.forEach((options) => {
+              if (options.correct == true) {
+                  console.log("answer is true")
+                  return counter++
+                  
+                } else if (options.correct == false) {
+                  console.log("incorrect answer");
+                }
+          })
+        
+      });
+    });
+  });
+}
+displayQuestions()
+
+//displays all questions in one go 
+/*questionsArray.forEach((question) => {
   container.innerHTML += questions(question);
 });
+*/
+
 
 //click on answer a for every question, check if it is true or false 
 //console.log if button a cliked is correct answer
 //console.log if button a clicked is wrong answer
 
-document.querySelectorAll(".a").forEach((answer) => {
-  answer.addEventListener("click", () => 
-   { console.log("clicked option a")
-    questionsArray.forEach((answers) => {
-      if (answers.correct == true) {
-        console.log("answer a clicked is true");
-      } else if (answers.correct == false) {
-        console.log("incorrect answer");
-      }
-    });
-  });
-});
+
 
 
 
