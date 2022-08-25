@@ -45,10 +45,10 @@ var questionsArray = [{
   question: "question2",
   answers: [{
     answera: "answer2a",
-    correct: true
+    correct: false
   }, {
     answerb: "answer2b",
-    correct: false
+    correct: true
   }, {
     answerc: "answer2c",
     correct: false
@@ -60,13 +60,13 @@ var questionsArray = [{
   question: "question3",
   answers: [{
     answera: "answer3",
-    correct: true
+    correct: false
   }, {
     answerb: "answer3",
     correct: false
   }, {
     answerc: "answer3",
-    correct: false
+    correct: true
   }, {
     answerd: "answer3",
     correct: false
@@ -96,11 +96,19 @@ var questions = function questions(question) {
 var container = document.querySelector(".card-container");
 questionsArray.forEach(function (question) {
   container.innerHTML += questions(question);
-}); //declares first button as a global variable
+}); //click on answer a for every question, check if it is true or false 
+//console.log if button a cliked is correct answer
+//console.log if button a clicked is wrong answer
 
-var button = document.getElementsByTagName("button")[0]; // if button 1 is clicked console.log("working")
-
-button.addEventListener("click", function () {
-  return console.log("clicked answer a");
-}); //console.log if button cliked is correct answer
-//console.log if button clicked is wrong answer
+document.querySelectorAll(".a").forEach(function (answer) {
+  answer.addEventListener("click", function () {
+    console.log("clicked option a");
+    questionsArray.forEach(function (answers) {
+      if (answers.correct == true) {
+        console.log("answer a clicked is true");
+      } else if (answers.correct == false) {
+        console.log("incorrect answer");
+      }
+    });
+  });
+});

@@ -26,56 +26,50 @@
 
 //has all the questions and answers in an array
 
-const questionsArray = 
-[
-    {question:"question1", 
-        answers: 
-        [
-            {answera:"answer1a", correct:true},
-            {answerb:"answer1b", correct:false},
-            {answerc:"answer1c", correct:false}, 
-            {answerd:"answer1d", correct:false}
-        ]
-    }
-,
-
-    {question:"question2", 
-     answers: 
-        [
-            {answera:"answer2a", correct:true},
-            {answerb:"answer2b", correct:false},
-            {answerc:"answer2c", correct:false}, 
-            {answerd:"answer2d", correct:false}
-        ]
-    }
-,
-
-    {question:"question3", 
-    answers: 
-        [
-            {answera:"answer3", correct:true},
-            {answerb:"answer3", correct:false},
-            {answerc:"answer3", correct:false}, 
-            {answerd:"answer3", correct:false}
-        ]
-    }
-,
-    {question:"question4", 
-    answers: 
-        [
-            {answera:"answer4", correct:true},
-            {answerb:"answer4", correct:false},
-            {answerc:"answer4", correct:false}, 
-            {answerd:"answer4", correct:false}
-        ]
-    }
+const questionsArray = [
+  {
+    question: "question1",
+    answers: [
+      { answera: "answer1a", correct: true },
+      { answerb: "answer1b", correct: false },
+      { answerc: "answer1c", correct: false },
+      { answerd: "answer1d", correct: false },
+    ],
+  },
+  {
+    question: "question2",
+    answers: [
+      { answera: "answer2a", correct: false },
+      { answerb: "answer2b", correct: true },
+      { answerc: "answer2c", correct: false },
+      { answerd: "answer2d", correct: false },
+    ],
+  },
+  {
+    question: "question3",
+    answers: [
+      { answera: "answer3", correct: false },
+      { answerb: "answer3", correct: false },
+      { answerc: "answer3", correct: true },
+      { answerd: "answer3", correct: false },
+    ],
+  },
+  {
+    question: "question4",
+    answers: [
+      { answera: "answer4", correct: true },
+      { answerb: "answer4", correct: false },
+      { answerc: "answer4", correct: false },
+      { answerd: "answer4", correct: false },
+    ],
+  },
 ];
 
 //displays all question cards in one go
 
 const questions = (question) => {
-    console.log(`${question.answers[0].answera}`)
-    return`
+  console.log(`${question.answers[0].answera}`);
+  return `
     <div class= "card">
     <h1 class= "question">${question.question}</h1>
     <div class="answers">
@@ -84,31 +78,31 @@ const questions = (question) => {
     <button class="c">${question.answers[2].answerc}</button>
     <button class="d">${question.answers[3].answerd}</button>
     </div>
-    </div>`
-
-    
-    
+    </div>`;
 };
 
 const container = document.querySelector(".card-container");
 
 questionsArray.forEach((question) => {
-    container.innerHTML += questions(question);
+  container.innerHTML += questions(question);
 });
 
-//declares first button as a global variable
-const button = document.getElementsByTagName("button")[0]
+//click on answer a for every question, check if it is true or false 
+//console.log if button a cliked is correct answer
+//console.log if button a clicked is wrong answer
 
-// if button 1 is clicked console.log("working")
-button.addEventListener("click", () => console.log("clicked answer a"))
-
-//console.log if button cliked is correct answer
-
-//console.log if button clicked is wrong answer
-
-
-
-
+document.querySelectorAll(".a").forEach((answer) => {
+  answer.addEventListener("click", () => 
+   { console.log("clicked option a")
+    questionsArray.forEach((answers) => {
+      if (answers.correct == true) {
+        console.log("answer a clicked is true");
+      } else if (answers.correct == false) {
+        console.log("incorrect answer");
+      }
+    });
+  });
+});
 
 
 
