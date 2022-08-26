@@ -26,7 +26,6 @@
   Create a home button to take user to start again and restart game
 */
 //has all the questions and answers in an array
-var next = document.getElementsByClassName(".next");
 var questionsArray = [{
   question: "question1",
   answers: [{
@@ -91,6 +90,7 @@ var questionsArray = [{
 var questionHeading = document.getElementsByClassName("question")[0];
 var answers = document.querySelectorAll(".answer");
 var start = document.querySelector(".start");
+var next = document.getElementsByClassName("next")[0];
 console.log(answers); //displays all question cards in one go
 
 var count = 0;
@@ -105,13 +105,14 @@ var displayQuestions = function displayQuestions(questions) {
     if (answer.value === "a") {
       console.log(questions[count].answers[count]);
       answer.innerHTML += questions[count].answers[count].a;
+    } else if (answer.value === "b") {
+      answer.innerHTML += questions[count].answers[count].b;
+    } else if (answer.value === "c") {
+      answer.innerHTML += questions[count].answers[count].c;
+    } else if (answer.value === "d") {
+      answer.innerHTML += questions[count].answers[count].d;
     }
   }); //Ollie- add event listener for all answer buttons and use questioncount to access answers for each question to check in and if else nested stament if it is correct
-
-  /*questions[count].answers.forEach((answer) => {
-    answer
-  })
-  */
 };
 
 var startQuiz = function startQuiz() {
@@ -119,29 +120,7 @@ var startQuiz = function startQuiz() {
   displayQuestions(questionsArray);
 };
 
-start.addEventListener("click", startQuiz); //console.log(questionHeading)
-//const questions = () => {
-//questionHeading.innerHTML = "";
-//answers.innerHTML = ""
-//for (let i = 0; i < questionsArray.length; i++){
-//  console.log(questionsArray[i])
-// answers.innerHTML =+ questionsArray[i].answers
-//}
-//}
-
-/* return `
-   <div class= "card">
-   <h1 class= "question">${question.question}</h1>
-   <div class="answers">
-   <button class="a">${question.answers[0].a}</button>
-   <button class="b">${question.answers[1].b}</button>
-   <button class="c">${question.answers[2].c}</button>
-   <button class="d">${question.answers[3].d}</button>
-   </div>
-   </div>`;
-};
-*/
-
+start.addEventListener("click", startQuiz);
 var container = document.querySelector(".card-container"); //displays questions one at at time,
 //let count = 0;
 
@@ -168,12 +147,3 @@ var container = document.querySelector(".card-container"); //displays questions 
 };
 displayQuestions();
 */
-//displays all questions in one go
-
-/*questionsArray.forEach((question) => {
-  container.innerHTML += questions(question);
-});
-*/
-//click on answer a for every question, check if it is true or false
-//console.log if button a cliked is correct answer
-//console.log if button a clicked is wrong answer

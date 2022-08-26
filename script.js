@@ -25,7 +25,7 @@
 */
 
 //has all the questions and answers in an array
-const next = document.getElementsByClassName(".next");
+
 
 const questionsArray = [
   {
@@ -68,6 +68,7 @@ const questionsArray = [
 const questionHeading = document.getElementsByClassName("question")[0]
 const answers = document.querySelectorAll(".answer")
 const start = document.querySelector(".start")
+const next = document.getElementsByClassName("next")[0];
 console.log(answers)
 
 //displays all question cards in one go
@@ -82,16 +83,17 @@ const displayQuestions = (questions) => {
     if (answer.value === "a"){
       console.log(questions[count].answers[count])
       answer.innerHTML += questions[count].answers[count].a
+    } else if (answer.value === "b") {
+      answer.innerHTML += questions[count].answers[count].b
+    } else if (answer.value === "c") {
+      answer.innerHTML += questions[count].answers[count].c
+    } else if (answer.value === "d") {
+      answer.innerHTML += questions[count].answers[count].d
     }
   })
 
 
 //Ollie- add event listener for all answer buttons and use questioncount to access answers for each question to check in and if else nested stament if it is correct
-
-  /*questions[count].answers.forEach((answer) => {
-    answer
-  })
-  */
 
     
 }
@@ -99,31 +101,13 @@ const startQuiz = () => {
 //run functions that displays the questions
  displayQuestions(questionsArray)
 }
+
+
 start.addEventListener("click", startQuiz)
-//console.log(questionHeading)
-//const questions = () => {
-  //questionHeading.innerHTML = "";
-  //answers.innerHTML = ""
-  //for (let i = 0; i < questionsArray.length; i++){
-  //  console.log(questionsArray[i])
-    
-   // answers.innerHTML =+ questionsArray[i].answers
-  //}
-//}
+
   
  
- /* return `
-    <div class= "card">
-    <h1 class= "question">${question.question}</h1>
-    <div class="answers">
-    <button class="a">${question.answers[0].a}</button>
-    <button class="b">${question.answers[1].b}</button>
-    <button class="c">${question.answers[2].c}</button>
-    <button class="d">${question.answers[3].d}</button>
-    </div>
-    </div>`;
-};
-*/
+
 const container = document.querySelector(".card-container");
 //displays questions one at at time,
 //let count = 0;
@@ -151,12 +135,4 @@ const container = document.querySelector(".card-container");
 };
 displayQuestions();
 */
-//displays all questions in one go
-/*questionsArray.forEach((question) => {
-  container.innerHTML += questions(question);
-});
-*/
 
-//click on answer a for every question, check if it is true or false
-//console.log if button a cliked is correct answer
-//console.log if button a clicked is wrong answer
