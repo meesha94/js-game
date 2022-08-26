@@ -25,8 +25,7 @@
 */
 
 //has all the questions and answers in an array
-const next = document.getElementsByClassName(".next")
-
+const next = document.getElementsByClassName(".next");
 
 const questionsArray = [
   {
@@ -66,12 +65,54 @@ const questionsArray = [
     ],
   },
 ];
+const questionHeading = document.getElementsByClassName("question")[0]
+const answers = document.querySelectorAll(".answer")
+const start = document.querySelector(".start")
+console.log(answers)
 
 //displays all question cards in one go
+let count = 0;
+const displayQuestions = (questions) => {
+  //empty string for questionnaNME
+  const questionName = questions[count].question 
+  console.log(questionName) 
+  questionHeading.innerHTML +=  questionName
+  answers.forEach((answer) => {
+    //EMOTY STRING FOR ANSWERS
+    if (answer.value === "a"){
+      console.log(questions[count].answers[count])
+      answer.innerHTML += questions[count].answers[count].a
+    }
+  })
 
-const questions = (question) => {
-  //console.log(`${question.answers[0].a}`);
-  return `
+
+//Ollie- add event listener for all answer buttons and use questioncount to access answers for each question to check in and if else nested stament if it is correct
+
+  /*questions[count].answers.forEach((answer) => {
+    answer
+  })
+  */
+
+    
+}
+const startQuiz = () => {
+//run functions that displays the questions
+ displayQuestions(questionsArray)
+}
+start.addEventListener("click", startQuiz)
+//console.log(questionHeading)
+//const questions = () => {
+  //questionHeading.innerHTML = "";
+  //answers.innerHTML = ""
+  //for (let i = 0; i < questionsArray.length; i++){
+  //  console.log(questionsArray[i])
+    
+   // answers.innerHTML =+ questionsArray[i].answers
+  //}
+//}
+  
+ 
+ /* return `
     <div class= "card">
     <h1 class= "question">${question.question}</h1>
     <div class="answers">
@@ -82,51 +123,40 @@ const questions = (question) => {
     </div>
     </div>`;
 };
-
+*/
 const container = document.querySelector(".card-container");
-//displays questions one at at time, 
-let count = 0;
-let counter = 0;
-const displayQuestions = () => {
-    
-container.innerHTML += questions(questionsArray[count])
-count ++;
+//displays questions one at at time,
+//let count = 0;
 
-document.querySelectorAll(".answers").forEach((answer) => {
-    answer.addEventListener("click", () => 
-     { //console.log(`${answer}`)
+/*const displayQuestions = () => {
+  container.innerHTML += questions(questionsArray[count]);
+  count++;
+
+  document.querySelectorAll(".answers").forEach((answer) => {
+    answer.addEventListener("click", () => {
       questionsArray.forEach((answers) => {
-         
-          //console.log(answers.answers)
-          answers.answers.forEach((options) => {
-              if (options.correct == true) {
-                  console.log("answer is true")
-                  return counter++
-                  
-                } else if (options.correct == false) {
-                  console.log("incorrect answer");
-                }
-          })
-        
+        //console.log(answers.answers)
+        answers.answers.forEach((options) => {
+          if (options.correct === true) {
+            console.log("answer is true")
+            event.target.style.color = "green";
+          } else if (options.correct === false) {
+            console.log("incorrect answer");
+            event.target.style.color = "red"
+          }
+        });
       });
     });
   });
-}
-displayQuestions()
-
-//displays all questions in one go 
+};
+displayQuestions();
+*/
+//displays all questions in one go
 /*questionsArray.forEach((question) => {
   container.innerHTML += questions(question);
 });
 */
 
-
-//click on answer a for every question, check if it is true or false 
+//click on answer a for every question, check if it is true or false
 //console.log if button a cliked is correct answer
 //console.log if button a clicked is wrong answer
-
-
-
-
-
-
