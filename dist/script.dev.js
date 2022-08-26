@@ -60,16 +60,16 @@ var questionsArray = [{
   question: "question3",
   answers: [{
     a: "answer3",
-    correct: false
+    correct: "true"
   }, {
     b: "answer3",
-    correct: false
+    correct: "false"
   }, {
     c: "answer3",
-    correct: true
+    correct: "false"
   }, {
     d: "answer3",
-    correct: false
+    correct: "false"
   }]
 }, {
   question: "question4",
@@ -88,29 +88,30 @@ var questionsArray = [{
   }]
 }];
 var questionHeading = document.getElementsByClassName("question")[0];
-var answers = document.querySelectorAll(".answer");
+var answerButton = document.querySelectorAll(".answer");
 var start = document.querySelector(".start");
-var next = document.getElementsByClassName("next")[0];
-console.log(answers); //displays all question cards in one go
+var next = document.querySelector(".next");
+console.log(next); //displays all question cards in one go
 
 var count = 0;
 
 var displayQuestions = function displayQuestions(questions) {
-  //empty string for questionnaNME
+  console.log(questionsArray);
   var questionName = questions[count].question;
+  questionHeading.innerHTML = "";
   console.log(questionName);
   questionHeading.innerHTML += questionName;
-  answers.forEach(function (answer) {
-    //EMOTY STRING FOR ANSWERS
+  answerButton.forEach(function (answer) {
+    answer.innerHTML = ""; //console.log(questions[0].answers[1]) 
+
     if (answer.value === "a") {
-      console.log(questions[count].answers[count]);
-      answer.innerHTML += questions[count].answers[count].a;
+      answer.innerHTML += questions[count].answers[0].a;
     } else if (answer.value === "b") {
-      answer.innerHTML += questions[count].answers[count].b;
+      answer.innerHTML += questions[count].answers[1].b;
     } else if (answer.value === "c") {
-      answer.innerHTML += questions[count].answers[count].c;
+      answer.innerHTML += questions[count].answers[2].c;
     } else if (answer.value === "d") {
-      answer.innerHTML += questions[count].answers[count].d;
+      answer.innerHTML += questions[count].answers[3].d;
     }
   }); //Ollie- add event listener for all answer buttons and use questioncount to access answers for each question to check in and if else nested stament if it is correct
 };
@@ -119,6 +120,12 @@ var startQuiz = function startQuiz() {
   //run functions that displays the questions
   displayQuestions(questionsArray);
 };
+
+var nextQuestion = function nextQuestion() {
+  count++;
+  displayQuestions(questionsArray);
+}; //next.addEventListener("click", nextQuestion)
+
 
 start.addEventListener("click", startQuiz);
 var container = document.querySelector(".card-container"); //displays questions one at at time,

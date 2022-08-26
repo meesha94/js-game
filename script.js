@@ -49,10 +49,10 @@ const questionsArray = [
   {
     question: "question3",
     answers: [
-      { a: "answer3", correct: false },
-      { b: "answer3", correct: false },
-      { c: "answer3", correct: true },
-      { d: "answer3", correct: false },
+      { a: "answer3", correct: "true" },
+      { b: "answer3", correct: "false" },
+      { c: "answer3", correct: "false" },
+      { d: "answer3", correct: "false" },
     ],
   },
   {
@@ -66,30 +66,37 @@ const questionsArray = [
   },
 ];
 const questionHeading = document.getElementsByClassName("question")[0]
-const answers = document.querySelectorAll(".answer")
+const answerButton = document.querySelectorAll(".answer")
 const start = document.querySelector(".start")
-const next = document.getElementsByClassName("next")[0];
-console.log(answers)
+const next = document.querySelector(".next");
+console.log(next)
 
 //displays all question cards in one go
 let count = 0;
+
 const displayQuestions = (questions) => {
-  //empty string for questionnaNME
+  console.log(questionsArray);
   const questionName = questions[count].question 
+  questionHeading.innerHTML = "";
   console.log(questionName) 
   questionHeading.innerHTML +=  questionName
-  answers.forEach((answer) => {
-    //EMOTY STRING FOR ANSWERS
+  answerButton.forEach((answer) => {
+    answer.innerHTML = ""
+    //console.log(questions[0].answers[1]) 
     if (answer.value === "a"){
-      console.log(questions[count].answers[count])
-      answer.innerHTML += questions[count].answers[count].a
+     
+      answer.innerHTML += questions[count].answers[0].a
     } else if (answer.value === "b") {
-      answer.innerHTML += questions[count].answers[count].b
-    } else if (answer.value === "c") {
-      answer.innerHTML += questions[count].answers[count].c
-    } else if (answer.value === "d") {
-      answer.innerHTML += questions[count].answers[count].d
+      
+      answer.innerHTML += questions[count].answers[1].b
+      
+    }  else if (answer.value === "c") {
+      
+      answer.innerHTML += questions[count].answers[2].c
+    }else if (answer.value === "d") {
+      answer.innerHTML += questions[count].answers[3].d
     }
+    
   })
 
 
@@ -101,7 +108,14 @@ const startQuiz = () => {
 //run functions that displays the questions
  displayQuestions(questionsArray)
 }
+const nextQuestion = () => {
+  count++;
+ displayQuestions(questionsArray)
 
+}
+
+
+//next.addEventListener("click", nextQuestion)
 
 start.addEventListener("click", startQuiz)
 
