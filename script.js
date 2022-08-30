@@ -110,10 +110,15 @@ const displayQuestions = (questions) => {
   })
     
 }
+const startPage = () => {
+  cardContainer.classList.remove("hide")
+  next.classList.remove("hide")
+  startQuiz()
+}
 
 const startQuiz = () => {
 //run functions that displays the questions
-cardContainer.classList.remove("hide")
+
  displayQuestions(questionsArray)
 
 }

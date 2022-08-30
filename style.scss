@@ -2,11 +2,43 @@
     display:none;
 }
 
-
-
-
-
-
 .correct {
     background-color: green;
+} 
+
+* {
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-container {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    .question {
+        display: flex;
+        justify-content: center;
+    }
+
+    .answers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+    }
+
+    #a, #c {
+        width: 30vw;
+        margin-left: 10vw;
+    }
+    #b, #d {
+        width: 30vw;
+    }
+    .next {
+        width: 30vw;
+        margin-left: 30vw;
+    }
 }

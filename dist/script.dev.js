@@ -127,9 +127,14 @@ var displayQuestions = function displayQuestions(questions) {
   });
 };
 
+var startPage = function startPage() {
+  cardContainer.classList.remove("hide");
+  next.classList.remove("hide");
+  startQuiz();
+};
+
 var startQuiz = function startQuiz() {
   //run functions that displays the questions
-  cardContainer.classList.remove("hide");
   displayQuestions(questionsArray);
 };
 
