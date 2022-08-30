@@ -60,16 +60,16 @@ var questionsArray = [{
   question: "question3",
   answers: [{
     a: "answer3",
-    correct: "true"
+    correct: true
   }, {
     b: "answer3",
-    correct: "false"
+    correct: false
   }, {
     c: "answer3",
-    correct: "false"
+    correct: false
   }, {
     d: "answer3",
-    correct: "false"
+    correct: false
   }]
 }, {
   question: "question4",
@@ -87,11 +87,18 @@ var questionsArray = [{
     correct: false
   }]
 }];
+var cardContainer = document.querySelector(".card-container");
 var questionHeading = document.getElementsByClassName("question")[0];
 var answerButton = document.querySelectorAll(".answer");
 var start = document.querySelector(".start");
 var next = document.querySelector(".next");
-console.log(next); //displays all question cards in one go
+var answerOption = document.querySelector(".answers");
+var optA = document.querySelector("#a");
+var optB = document.querySelector("#b");
+var optC = document.querySelector("#c");
+var optD = document.querySelector("#d");
+var optsArray = [optA, optB, optC, optD];
+console.log(optsArray[0]); //displays all question cards in one go
 
 var count = 0;
 
@@ -105,52 +112,48 @@ var displayQuestions = function displayQuestions(questions) {
     answer.innerHTML = ""; //console.log(questions[0].answers[1]) 
 
     if (answer.value === "a") {
+      answer.setAttribute("data-status", questions[count].answers[0].correct);
       answer.innerHTML += questions[count].answers[0].a;
     } else if (answer.value === "b") {
+      answer.setAttribute("data-status", questions[count].answers[1].correct);
       answer.innerHTML += questions[count].answers[1].b;
     } else if (answer.value === "c") {
+      answer.setAttribute("data-status", questions[count].answers[2].correct);
       answer.innerHTML += questions[count].answers[2].c;
     } else if (answer.value === "d") {
+      answer.setAttribute("data-status", questions[count].answers[3].correct);
       answer.innerHTML += questions[count].answers[3].d;
     }
-  }); //Ollie- add event listener for all answer buttons and use questioncount to access answers for each question to check in and if else nested stament if it is correct
+  });
 };
 
 var startQuiz = function startQuiz() {
   //run functions that displays the questions
+  cardContainer.classList.remove("hide");
   displayQuestions(questionsArray);
 };
 
 var nextQuestion = function nextQuestion() {
+  optsArray.forEach(function (option) {
+    option.style.color = "black";
+  });
   count++;
   displayQuestions(questionsArray);
-}; //next.addEventListener("click", nextQuestion)
-
-
-start.addEventListener("click", startQuiz);
-var container = document.querySelector(".card-container"); //displays questions one at at time,
-//let count = 0;
-
-/*const displayQuestions = () => {
-  container.innerHTML += questions(questionsArray[count]);
-  count++;
-
-  document.querySelectorAll(".answers").forEach((answer) => {
-    answer.addEventListener("click", () => {
-      questionsArray.forEach((answers) => {
-        //console.log(answers.answers)
-        answers.answers.forEach((options) => {
-          if (options.correct === true) {
-            console.log("answer is true")
-            event.target.style.color = "green";
-          } else if (options.correct === false) {
-            console.log("incorrect answer");
-            event.target.style.color = "red"
-          }
-        });
-      });
-    });
-  });
 };
-displayQuestions();
-*/
+
+console.log(next);
+next.addEventListener("click", nextQuestion);
+start.addEventListener("click", startQuiz);
+optsArray.forEach(function (option) {
+  option.addEventListener("click", function () {
+    if (option.dataset.status == "true") {
+      //option.classList.add("correct")
+      option.style.color = "green";
+      console.log(option);
+    } else {
+      option.style.color = "red";
+    }
+
+    console.log(option.dataset.status);
+  });
+});
