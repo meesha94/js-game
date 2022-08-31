@@ -2,18 +2,7 @@
 
 /* Quiz 
     create a questions array 
-    store questions and answers as such:
-     [
-        {question:question1, 
-            answers: 
-            [
-                {answer:answer1, correct:true},
-                {answer:answer2, correct:false},
-                {answer:answer3, correct:false}, 
-                {answer:answer4, correct:false}
-                ]
-            }
-        ]
+    
 
 
  Create a function that will loop through the questions array, 
@@ -21,7 +10,7 @@
      else if user clicks on incorrect answer it restarts the quiz from the start
 
   Display the question and answers on the html page 
-        will need a h1 tag for question and 4 button tags 
+        
   
   Create a home button to take user to start again and restart game
 */
@@ -111,7 +100,7 @@ var displayQuestions = function displayQuestions(questions) {
   console.log(questionName);
   questionHeading.innerHTML += questionName;
   answerButton.forEach(function (answer) {
-    answer.innerHTML = ""; //console.log(questions[0].answers[1]) 
+    answer.innerHTML = "";
 
     if (answer.value === "a") {
       answer.setAttribute("data-status", questions[count].answers[0].correct);
@@ -137,6 +126,7 @@ var startQuiz = function startQuiz() {
 
 var homePage = function homePage() {
   openingTitle.classList.remove("hidden");
+  count = 0;
 };
 
 var nextQuestion = function nextQuestion() {
