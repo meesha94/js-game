@@ -16,63 +16,168 @@
 */
 //has all the questions and answers in an array
 var questionsArray = [{
-  question: "question1",
+  question: "In the season 6 Thanksgiving episode, what dessert does Rachel try and make?",
   answers: [{
-    a: "answer1a",
+    a: "Trifle",
     correct: true
   }, {
-    b: "answer1b",
+    b: "Cheesecake",
     correct: false
   }, {
-    c: "answer1c",
+    c: "Chocolate Cake",
     correct: false
   }, {
-    d: "answer1d",
+    d: "Eton Mess",
     correct: false
   }]
 }, {
-  question: "question2",
+  question: "How many sisters does Joey have?",
   answers: [{
-    a: "answer2a",
+    a: "3",
     correct: false
   }, {
-    b: "answer2b",
+    b: "7",
     correct: true
   }, {
-    c: "answer2c",
+    c: "0",
     correct: false
   }, {
-    d: "answer2d",
+    d: "4",
     correct: false
   }]
 }, {
-  question: "question3",
+  question: "Who plays Emily's mum?",
   answers: [{
-    a: "answer3",
+    a: "Jennifer Saunders",
     correct: true
   }, {
-    b: "answer3",
+    b: "Dawn French",
     correct: false
   }, {
-    c: "answer3",
+    c: "Julie Walters",
     correct: false
   }, {
-    d: "answer3",
+    d: "Joanna Lumley",
     correct: false
   }]
 }, {
-  question: "question4",
+  question: "What is Phoebe's middle name?",
   answers: [{
-    a: "answer4",
+    a: "She never finds out",
     correct: true
   }, {
-    b: "answer4",
+    b: "Ursula",
     correct: false
   }, {
-    c: "answer4",
+    c: "Muriel",
     correct: false
   }, {
-    d: "answer4",
+    d: "Steven",
+    correct: false
+  }]
+}, {
+  question: "Which Caribbean country does Ross' conference take place on in season 9?",
+  answers: [{
+    a: "Jamaica",
+    correct: false
+  }, {
+    b: "Aruba",
+    correct: false
+  }, {
+    c: "Barbados",
+    correct: true
+  }, {
+    d: "Trinidad",
+    correct: false
+  }]
+}, {
+  question: "How many pages long was Rachel's letter to Ross?",
+  answers: [{
+    a: "8",
+    correct: false
+  }, {
+    b: "15",
+    correct: false
+  }, {
+    c: "16",
+    correct: false
+  }, {
+    d: "18",
+    correct: true
+  }]
+}, {
+  question: "Who was the last friend to find out about Monica and Chandler?",
+  answers: [{
+    a: "Rachel",
+    correct: false
+  }, {
+    b: "Ross",
+    correct: true
+  }, {
+    c: "Phoebe",
+    correct: false
+  }, {
+    d: "Joey",
+    correct: false
+  }]
+}, {
+  question: "What fake name does Joey go by?",
+  answers: [{
+    a: "Ken Adams",
+    correct: true
+  }, {
+    b: "John Tribbiani",
+    correct: false
+  }, {
+    c: "Ted Phalange",
+    correct: false
+  }, {
+    d: "Mike Hannigan",
+    correct: false
+  }]
+}, {
+  question: "What name does Rachel’s sister Amy keep mistakenly calling Emma?",
+  answers: [{
+    a: "Erica",
+    correct: false
+  }, {
+    b: "Emmy",
+    correct: false
+  }, {
+    c: "Ellie",
+    correct: false
+  }, {
+    d: "Ella",
+    correct: true
+  }]
+}, {
+  question: "",
+  answers: [{
+    a: "",
+    correct: true
+  }, {
+    b: "",
+    correct: false
+  }, {
+    c: "",
+    correct: false
+  }, {
+    d: "",
+    correct: false
+  }]
+}, {
+  question: "",
+  answers: [{
+    a: "",
+    correct: true
+  }, {
+    b: "",
+    correct: false
+  }, {
+    c: "",
+    correct: false
+  }, {
+    d: "",
     correct: false
   }]
 }];
