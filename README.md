@@ -1,1 +1,2 @@
 # js-game
+A simple quix game abou the tv show Friends, in which the user can click on an anser and it will change colour depending on if the answer is correct or not. The user can also restart the quiz by pressing on the home key at any time and it will take ther user back to the start page
