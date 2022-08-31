@@ -249,7 +249,6 @@ homeButton.addEventListener("click", homePage);
 optsArray.forEach(function (option) {
   option.addEventListener("click", function () {
     if (option.dataset.status == "true") {
-      //option.classList.add("correct")
       option.style.color = "green";
       console.log(option);
     } else {
