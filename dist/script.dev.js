@@ -252,7 +252,7 @@ optsArray.forEach(function (option) {
       option.style.color = "#3EA34D";
       console.log(option);
     } else {
-      option.style.color = "red";
+      option.style.color = "#bf0603";
     }
 
     console.log(option.dataset.status);

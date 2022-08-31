@@ -72,10 +72,11 @@
   background: linear-gradient(90deg, #b9044e 0%, #99045e 36%, #6e0386 100%);
 }
 .card-container .next {
-  width: 30vw;
-  margin-left: 30vw;
+  width: 20vw;
+  margin-left: 35vw;
   margin-top: 100px;
   background-color: purple;
+  font-size: 16px;
 }
 
 .home {
