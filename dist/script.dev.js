@@ -151,34 +151,79 @@ var questionsArray = [{
     correct: true
   }]
 }, {
-  question: "",
+  question: "What’s the name of the grumpy man who lived below Monica’s apartment?",
   answers: [{
-    a: "",
+    a: "Mr Heckler",
+    correct: false
+  }, {
+    b: "Mr Hickles",
+    correct: false
+  }, {
+    c: "Mr Heckles",
     correct: true
   }, {
-    b: "",
-    correct: false
-  }, {
-    c: "",
-    correct: false
-  }, {
-    d: "",
+    d: "Mr Finches",
     correct: false
   }]
 }, {
-  question: "",
+  question: "How many categories did Monica have for her towels?",
   answers: [{
-    a: "",
+    a: "5",
+    correct: false
+  }, {
+    b: "11",
     correct: true
   }, {
-    b: "",
+    c: "8",
     correct: false
   }, {
-    c: "",
+    d: "15",
+    correct: false
+  }]
+}, {
+  question: "Where does Chandler tell Janice he is moving?",
+  answers: [{
+    a: "Minsk",
     correct: false
   }, {
-    d: "",
+    b: "Russia",
     correct: false
+  }, {
+    c: "Yukon",
+    correct: false
+  }, {
+    d: "Yemen",
+    correct: true
+  }]
+}, {
+  question: "What was the name of Joey’s BarcaLounger?",
+  answers: [{
+    a: "Rosita",
+    correct: true
+  }, {
+    b: "Rose",
+    correct: false
+  }, {
+    c: "Pamela",
+    correct: false
+  }, {
+    d: "Yasmin",
+    correct: false
+  }]
+}, {
+  question: "What does Ross' boss at the museum do to send him into a rage?",
+  answers: [{
+    a: "He dated Monica",
+    correct: false
+  }, {
+    b: "He scratched his car",
+    correct: false
+  }, {
+    c: "He broke his projector",
+    correct: false
+  }, {
+    d: "He ate his sandwich",
+    correct: true
   }]
 }];
 var homeButton = document.querySelector(".home");
