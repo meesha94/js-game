@@ -249,7 +249,7 @@ homeButton.addEventListener("click", homePage);
 optsArray.forEach(function (option) {
   option.addEventListener("click", function () {
     if (option.dataset.status == "true") {
-      option.style.color = "green";
+      option.style.color = "#3EA34D";
       console.log(option);
     } else {
       option.style.color = "red";

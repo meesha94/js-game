@@ -61,6 +61,7 @@
     width: 20vw;
     margin-left: 10vw;
     font-size: 20px;
+    font-weight: bolder;
     background: rgb(185, 4, 78);
     background: linear-gradient(
       90deg,
@@ -73,7 +74,9 @@
   #b,
   #d {
     width: 20vw;
+    margin-left: 100px;
     font-size: 20px;
+    font-weight: bolder;
     background: rgb(185, 4, 78);
     background: linear-gradient(
       90deg,
@@ -85,7 +88,8 @@
   .next {
     width: 30vw;
     margin-left: 30vw;
-    background-color: antiquewhite;
+    margin-top: 100px;
+    background-color:purple;
   }
 }
 .home {

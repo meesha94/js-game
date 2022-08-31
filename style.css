@@ -58,20 +58,24 @@
   width: 20vw;
   margin-left: 10vw;
   font-size: 20px;
+  font-weight: bolder;
   background: #b9044e;
   background: linear-gradient(90deg, #b9044e 0%, #99045e 36%, #6e0386 100%);
 }
 .card-container #b,
 .card-container #d {
   width: 20vw;
+  margin-left: 100px;
   font-size: 20px;
+  font-weight: bolder;
   background: #b9044e;
   background: linear-gradient(90deg, #b9044e 0%, #99045e 36%, #6e0386 100%);
 }
 .card-container .next {
   width: 30vw;
   margin-left: 30vw;
-  background-color: antiquewhite;
+  margin-top: 100px;
+  background-color: purple;
 }
 
 .home {

@@ -190,7 +190,7 @@ optsArray.forEach((option) => {
   option.addEventListener("click", () => {
     if (option.dataset.status == "true") {
       
-      option.style.color = "green";
+      option.style.color = "#3EA34D";
       console.log(option);
     } else {
       option.style.color = "red";
