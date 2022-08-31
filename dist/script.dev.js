@@ -87,6 +87,8 @@ var questionsArray = [{
     correct: false
   }]
 }];
+var homeButton = document.querySelector(".home");
+var openingTitle = document.querySelector(".opening");
 var cardContainer = document.querySelector(".card-container");
 var questionHeading = document.getElementsByClassName("question")[0];
 var answerButton = document.querySelectorAll(".answer");
@@ -127,15 +129,14 @@ var displayQuestions = function displayQuestions(questions) {
   });
 };
 
-var startPage = function startPage() {
-  cardContainer.classList.remove("hide");
-  next.classList.remove("hide");
-  startQuiz();
-};
-
 var startQuiz = function startQuiz() {
   //run functions that displays the questions
+  openingTitle.classList.add("hidden");
   displayQuestions(questionsArray);
+};
+
+var homePage = function homePage() {
+  openingTitle.classList.remove("hidden");
 };
 
 var nextQuestion = function nextQuestion() {
@@ -149,6 +150,7 @@ var nextQuestion = function nextQuestion() {
 console.log(next);
 next.addEventListener("click", nextQuestion);
 start.addEventListener("click", startQuiz);
+homeButton.addEventListener("click", homePage);
 optsArray.forEach(function (option) {
   option.addEventListener("click", function () {
     if (option.dataset.status == "true") {

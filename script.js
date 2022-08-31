@@ -65,6 +65,8 @@ const questionsArray = [
     ],
   },
 ];
+const homeButton = document.querySelector(".home")
+const openingTitle = document.querySelector(".opening")
 const cardContainer = document.querySelector(".card-container")
 const questionHeading = document.getElementsByClassName("question")[0]
 const answerButton = document.querySelectorAll(".answer")
@@ -110,17 +112,21 @@ const displayQuestions = (questions) => {
   })
     
 }
-const startPage = () => {
-  cardContainer.classList.remove("hide")
-  next.classList.remove("hide")
-  startQuiz()
-}
+
+
+
+
+
+
 
 const startQuiz = () => {
 //run functions that displays the questions
-
+openingTitle.classList.add("hidden")
  displayQuestions(questionsArray)
 
+}
+const homePage = () => {
+  openingTitle.classList.remove("hidden")
 }
 const nextQuestion = () => {
   optsArray.forEach(option => {
@@ -136,6 +142,7 @@ next.addEventListener("click", nextQuestion)
 
 start.addEventListener("click", startQuiz)
 
+homeButton.addEventListener("click", homePage)
 
 
 

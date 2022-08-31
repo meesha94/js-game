@@ -9,6 +9,21 @@
 * {
     padding: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkcyan;
+    
+}
+
+.opening {
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-color: aqua;
+}
+
+.hidden {
+    display:none;
 }
 
 .card-container {
@@ -16,29 +31,41 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #E83F6F;
     
 
     .question {
         display: flex;
         justify-content: center;
+        color: antiquewhite;
+        background-color: #E83F6F;
     }
 
     .answers {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        background-color: #E83F6F;
         
     }
 
     #a, #c {
         width: 30vw;
         margin-left: 10vw;
+        background-color: antiquewhite;
     }
     #b, #d {
         width: 30vw;
+        background-color: antiquewhite;
     }
     .next {
         width: 30vw;
         margin-left: 30vw;
+        background-color: antiquewhite;
+        
     }
+    
+}
+.start {
+    background-color: antiquewhite;
 }
