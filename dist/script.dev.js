@@ -266,6 +266,7 @@ var nextQuestion = function nextQuestion() {
   optsArray.forEach(function (option) {
     option.style.color = "black";
   });
+  count++;
   displayQuestions(questionsArray);
 };
 

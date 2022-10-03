@@ -184,6 +184,7 @@ const nextQuestion = () => {
   optsArray.forEach((option) => {
     option.style.color = "black";
   });
+  count++;
   
   displayQuestions(questionsArray);
 };
