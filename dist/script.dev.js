@@ -1,20 +1,5 @@
 "use strict";
 
-/* Quiz 
-    create a questions array 
-    
-
-
- Create a function that will loop through the questions array, 
-    and if user clicks on correct answer it will move on to the next question
-     else if user clicks on incorrect answer it restarts the quiz from the start
-
-  Display the question and answers on the html page 
-        
-  
-  Create a home button to take user to start again and restart game
-*/
-//has all the questions and answers in an array
 var questionsArray = [{
   question: "In the season 6 Thanksgiving episode, what dessert does Rachel try and make?",
   answers: [{
@@ -238,8 +223,7 @@ var optA = document.querySelector("#a");
 var optB = document.querySelector("#b");
 var optC = document.querySelector("#c");
 var optD = document.querySelector("#d");
-var optsArray = [optA, optB, optC, optD];
-console.log(optsArray[0]); //displays all question cards in one go
+var optsArray = [optA, optB, optC, optD]; //displays all question cards 
 
 var count = 0;
 
@@ -269,21 +253,19 @@ var displayQuestions = function displayQuestions(questions) {
 };
 
 var startQuiz = function startQuiz() {
-  //run functions that displays the questions
+  //run function that displays the questions
   openingTitle.classList.add("hidden");
   displayQuestions(questionsArray);
 };
 
 var homePage = function homePage() {
   openingTitle.classList.remove("hidden");
-  count = 0;
 };
 
 var nextQuestion = function nextQuestion() {
   optsArray.forEach(function (option) {
     option.style.color = "black";
   });
-  count++;
   displayQuestions(questionsArray);
 };
 

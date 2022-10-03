@@ -25,12 +25,14 @@
 
   .start {
     width: 20vw;
-    height: 15vh;
-    margin-top: 300px;
+    height: 9vh;
+    margin-top: 350px;
     margin-right: 200px;
     border-radius: 7px;
     background: none;
     color: azure;
+    margin-left: 110px;
+    font-weight: bold;
   }
 }
 
@@ -44,12 +46,18 @@
   justify-content: center;
   background-image: url("./images/background.jpeg");
   height: 80vh;
+  border: 3px solid black;
   
 
   .question {
     display: flex;
     justify-content: center;
-    color: whitesmoke
+    color: whitesmoke;
+    background-color: black;
+    height: 80px;
+    width: 1000px;
+    text-align: center;
+    margin-left: 55px;
   }
 
   .answers {
@@ -64,40 +72,35 @@
     margin-left: 10vw;
     font-size: 20px;
     font-weight: bolder;
-    background: rgb(185, 4, 78);
-    background: linear-gradient(
-      90deg,
-      rgba(185, 4, 78, 1) 0%,
-      rgba(153, 4, 94, 1) 36%,
-      rgba(110, 3, 134, 1) 100%
-    );
+    background-color: whitesmoke;
+    color: black;
+      
+  };
 
-  }
+  
   #b,
   #d {
     width: 20vw;
     margin-left: 100px;
     font-size: 20px;
     font-weight: bolder;
-    background: rgb(185, 4, 78);
-    background: linear-gradient(
-      90deg,
-      rgba(185, 4, 78, 1) 0%,
-      rgba(153, 4, 94, 1) 36%,
-      rgba(110, 3, 134, 1) 100%
-    );
+    background-color: whitesmoke;
+    color: black;
   }
   .next {
     width: 20vw;
     margin-left: 35vw;
     margin-top: 100px;
-    background-color:purple;
+    background-color:black;
+    color: whitesmoke;
     font-size: 16px;
-  }
-}
+  };
+};
 .home {
-  background-color: purple;
+  background-color: black;
   font-size: 18px;
   margin-bottom: 10px;
-  font-style: bold;
-}
+  font-style: bolder;
+  color: whitesmoke;
+};
+

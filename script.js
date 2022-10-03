@@ -1,20 +1,3 @@
-/* Quiz 
-    create a questions array 
-    
-
-
- Create a function that will loop through the questions array, 
-    and if user clicks on correct answer it will move on to the next question
-     else if user clicks on incorrect answer it restarts the quiz from the start
-
-  Display the question and answers on the html page 
-        
-  
-  Create a home button to take user to start again and restart game
-*/
-
-//has all the questions and answers in an array
-
 const questionsArray = [
   {
     question: "In the season 6 Thanksgiving episode, what dessert does Rachel try and make?",
@@ -155,14 +138,15 @@ const optA = document.querySelector("#a");
 const optB = document.querySelector("#b");
 const optC = document.querySelector("#c");
 const optD = document.querySelector("#d");
-
 const optsArray = [optA, optB, optC, optD];
-console.log(optsArray[0]);
 
-//displays all question cards in one go
+
+
+//displays all question cards 
 let count = 0;
 
 const displayQuestions = (questions) => {
+
   console.log(questionsArray);
   const questionName = questions[count].question;
   questionHeading.innerHTML = "";
@@ -187,20 +171,20 @@ const displayQuestions = (questions) => {
 };
 
 const startQuiz = () => {
-  //run functions that displays the questions
+  //run function that displays the questions
   openingTitle.classList.add("hidden");
   displayQuestions(questionsArray);
+  
+  
 };
 const homePage = () => {
   openingTitle.classList.remove("hidden");
-  count = 0
 };
 const nextQuestion = () => {
   optsArray.forEach((option) => {
     option.style.color = "black";
   });
-
-  count++;
+  
   displayQuestions(questionsArray);
 };
 console.log(next);
@@ -214,9 +198,9 @@ start.addEventListener("click", startQuiz);
 homeButton.addEventListener("click", homePage);
 
 optsArray.forEach((option) => {
+  
   option.addEventListener("click", () => {
     if (option.dataset.status == "true") {
-      
       option.style.color = "#3EA34D";
       console.log(option);
     } else {
